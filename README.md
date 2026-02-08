@@ -6,18 +6,17 @@ It showcases my projects, skills, and contact information.
 ## Features
 
 - Modern, responsive UI
-- Smooth animations using **GSAP**
+- Smooth animations using **Framer Motion**
 - Projects section with live demos
 - Contact form with email integration
-- Dark/light mode toggle
 - Blog section (coming soon!)
 
 ## Tech Stack
 
-- **Frontend:** React, Vite, Tailwind CSS, Bootstrap (optional)
-- **Animations:** GSAP
+- **Frontend:** JavaScript, React, Vite, Tailwind CSS, Bootstrap (optional)
+- **Animations:** Framer motion
 - **State Management:** React Context API
-- **Forms & Data:** Supabase or any backend of choice
+- **Forms & Data:** Supabase or MongoDB learning and Soon
 - **Linting & Code Quality:** ESLint, Prettier
 
 ## Available Scripts
