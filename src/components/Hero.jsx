@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -47,40 +47,49 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="mt-8 flex gap-4 justify-center"
+          className="mt-8 flex gap-4 justify-center flex-wrap"
         >
           <Link
             to="/projects"
-            className="px-6 py-3 bg-red-400 rounded-lg hover:bg-red-500 transition"
+            className="px-6 py-3 border border-red-400 text-red-400 rounded-lg hover:bg-red-400 hover:text-white transition"
           >
             View Projects
           </Link>
 
-          <a
-            to=""
+          {/* <motion.a
+            href="Muhammad Farooq (2).pdf"
             download
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="px-6 py-3 border border-red-400 text-red-400 rounded-lg hover:bg-red-400 hover:text-white transition"
           >
             Download CV
-          </a>
+          </motion.a> */}
         </motion.div>
+
+        {/* Social Icons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1 }}
           className="mt-10 flex justify-center gap-6 text-gray-400"
         >
           <a
             href="https://github.com/iamfarooq07"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-red-400"
           >
-            <FaGithub size={44} />
+            <FaGithub size={40} />
           </a>
+
           <a
             href="https://www.linkedin.com/in/muhammad-farooq-123f/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-red-400"
           >
-            <FaLinkedin size={44} />
+            <FaLinkedin size={40} />
           </a>
         </motion.div>
       </motion.div>

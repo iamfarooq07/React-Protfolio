@@ -8,7 +8,7 @@ const About = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="py-40 bg-black px-6 h-[80vh]"
+      className="py-40 bg-black px-6 min-h-screen"
     >
       <div className="max-w-4xl mx-auto text-center">
         {/* Heading */}
