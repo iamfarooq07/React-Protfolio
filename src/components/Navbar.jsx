@@ -40,11 +40,34 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {open && (
         <ul className="md:hidden bg-gray-800 px-6 py-4 space-y-4 text-gray-300">
-          <li className="hover:text-red-400">Home</li>
-          <li className="hover:text-red-400">About</li>
-          <li className="hover:text-red-400">Skills</li>
-          <li className="hover:text-red-400">Projects</li>
-          <li className="hover:text-red-400">Contact</li>
+          <li>
+            <Link to={"/"} className="hover:text-red-400 cursor-pointer">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to={"/about"} className="hover:text-red-400 cursor-pointer">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to={"/skills"} className="hover:text-red-400 cursor-pointer">
+              Skills
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={"/projects"}
+              className="hover:text-red-400 cursor-pointer"
+            >
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link to={"/contact"} className="hover:text-red-400 cursor-pointer">
+              Contact
+            </Link>
+          </li>
         </ul>
       )}
     </nav>

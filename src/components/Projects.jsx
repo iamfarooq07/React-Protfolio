@@ -1,33 +1,53 @@
 import { motion } from "framer-motion";
+import { p } from "motion/react-client";
+import { Link } from "react-router";
 
 const projects = [
   {
     title: "Todo App",
     description: "Task management app with add, delete, and update features.",
     tech: "React, Tailwind CSS",
-    live: "#",
-    github: "#",
+    live: "https://react-todo-app-i15c.vercel.app/",
+    github: "https://github.com/iamfarooq07/React-Todo-App",
   },
   {
     title: "Weather App",
     description: "Real-time weather app using external API.",
     tech: "JavaScript, API",
-    live: "#",
-    github: "#",
+    live: "https://iamfarooq07.github.io/21-day-5-Day-Weather-Forecast-/",
+    github: "https://github.com/iamfarooq07/21-day-5-Day-Weather-Forecast-",
   },
   {
-    title: "Food App",
-    description: "Food ordering UI with filtering and categories.",
-    tech: "React, CSS",
-    live: "#",
-    github: "#",
+    title: "Password Generator App",
+    description:
+      "A React app to generate secure, random passwords with customizable options.",
+    tech: "Html, Tailwindcss, JavaScript",
+    live: "https://iamfarooq07.github.io/5-day-Password-Genrater/",
+    github: "https://github.com/iamfarooq07/5-day-Password-Genrater",
   },
   {
-    title: "Collection Page",
-    description: "Product filtering, sorting, and pagination system.",
+    title: "E-Commerce Website",
+    description:
+      "A full-featured e-commerce platform with product filtering, sorting, pagination, and responsive UI built in React.",
+    tech: "React, JavaScript, Frontend",
+    live: "https://e-commerce-website-i8gz4bqui-iamfarooq07s-projects.vercel.app/",
+    github: "https://github.com/iamfarooq07/E-Commerce-Website",
+  },
+
+  {
+    title: "Calculator",
+    description:
+      "A React calculator with responsive design, smooth UI, and efficient state handling.",
     tech: "React, JavaScript",
-    live: "#",
-    github: "#",
+    live: "https://react-assit-3.vercel.app/",
+    github: "https://github.com/iamfarooq07/React-Calculator-App",
+  },
+  {
+    title: "REST API Project",
+    description:
+      "A RESTful API built with Express.js and Node.js, supporting CRUD operations and structured routing for efficient backend management.",
+    tech: "Express.js, Node.js",
+    github: "https://github.com/iamfarooq07/Express-Js-RESTful-Api-",
   },
 ];
 
@@ -39,7 +59,7 @@ const Projects = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="py-20 bg-gray-800 px-6"
+      className="py-20 bg-black px-6"
     >
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
@@ -76,21 +96,21 @@ const Projects = () => {
 
               {/* Buttons */}
               <div className="mt-6 flex gap-4">
-                <a
-                  href={project.live}
+                <Link
+                  to={project.live}
                   target="_blank"
-                  className="px-4 py-2 bg-red-500 rounded-md text-sm hover:bg-red-600 transition"
+                  className="px-4 py-2 bg-red-400 rounded-md text-sm hover:bg-red-500 transition"
                 >
                   Live
-                </a>
+                </Link>
 
-                <a
-                  href={project.github}
+                <Link
+                  to={project.github}
                   target="_blank"
                   className="px-4 py-2 border border-red-400 text-red-400 rounded-md text-sm hover:bg-red-400 hover:text-white transition"
                 >
                   GitHub
-                </a>
+                </Link>
               </div>
             </motion.div>
           ))}

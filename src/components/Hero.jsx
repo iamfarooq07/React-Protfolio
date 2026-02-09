@@ -57,7 +57,7 @@ const Hero = () => {
           </Link>
 
           <a
-            to="/resume.pdf"
+            to=""
             download
             className="px-6 py-3 border border-red-400 text-red-400 rounded-lg hover:bg-red-400 hover:text-white transition"
           >

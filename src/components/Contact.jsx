@@ -8,7 +8,7 @@ const Contact = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="py-20 bg-gray-900 px-6"
+      className="py-20 bg-black px-6"
     >
       <div className="max-w-4xl mx-auto text-center">
         {/* Heading */}
