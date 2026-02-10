@@ -11,7 +11,6 @@ import { Route, Routes } from "react-router";
 function App() {
   return (
     <div>
-      {/* <h1 className="text-2xl text-red-400 text-center">Hello Would</h1> */}
       <Navbar />
       <Routes>
         <Route index element={<Hero />} />
