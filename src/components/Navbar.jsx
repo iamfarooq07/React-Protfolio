@@ -32,7 +32,10 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Button */}
-        <button className="md:hidden text-2xl" onClick={() => setOpen(!open)}>
+        <button
+          className="md:hidden text-white text-2xl"
+          onClick={() => setOpen(!open)}
+        >
           ☰
         </button>
       </div>
