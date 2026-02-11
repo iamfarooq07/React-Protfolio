@@ -109,11 +109,11 @@ const Hero = () => {
       </motion.div>
 
       {/* RIGHT ICON CLOUD */}
-      <div className="relative w-full lg:w-[700px] h-[500px] lg:h-[700px] flex items-center justify-center overflow-hidden">
+      {/* <div className="relative w-full lg:w-[700px] h-[500px] lg:h-[700px] flex items-center justify-center overflow-hidden">
         <div className="scale-125 lg:scale-150">
           <IconCloud images={images} />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
