@@ -112,7 +112,7 @@ const Projects = () => {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 bg-red-400 rounded-md text-sm hover:bg-red-500 transition"
+                    className="px-4 py-2 bg-red-400 text-white rounded-md text-sm "
                   >
                     Live
                   </a>
