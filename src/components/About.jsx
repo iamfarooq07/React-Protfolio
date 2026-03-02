@@ -55,7 +55,7 @@ const About = () => {
         {/* Stats */}
         <motion.div
           variants={item}
-          className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6"
+          className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {/* Card 1 */}
           <motion.div
@@ -75,7 +75,16 @@ const About = () => {
             <p className="text-gray-400 mt-2">Year Learning</p>
           </motion.div>
 
-          {/* Card 3 */}
+          {/* Card 3 - Certificates */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-red-400 transition"
+          >
+            <h3 className="text-2xl font-bold text-red-400">5+</h3>
+            <p className="text-gray-400 mt-2">Certificates</p>
+          </motion.div>
+
+          {/* Card 4 */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-red-400 transition"
