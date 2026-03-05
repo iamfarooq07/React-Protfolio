@@ -71,7 +71,7 @@ const About = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-red-400 transition"
           >
-            <h3 className="text-2xl font-bold text-red-400">1+</h3>
+            <h3 className="text-2xl font-bold text-red-400">2+</h3>
             <p className="text-gray-400 mt-2">Year Learning</p>
           </motion.div>
 
@@ -80,7 +80,7 @@ const About = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-red-400 transition"
           >
-            <h3 className="text-2xl font-bold text-red-400">5+</h3>
+            <h3 className="text-2xl font-bold text-red-400">6+</h3>
             <p className="text-gray-400 mt-2">Certificates</p>
           </motion.div>
 
