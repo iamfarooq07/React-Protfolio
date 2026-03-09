@@ -2,6 +2,14 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "AI-Powered Clinic Management System",
+    description:
+      "MERN-based AI clinic system with real-time scheduling and automated patient records in a dark-mode UI.",
+    tech: "MERN Stack (MongoDB, Express.js, React, Node.js), Tailwind CSS, JWT",
+    live: "https://opticlinic-ai.vercel.app/",
+    github: "https://github.com/iamfarooq07/Frontend-Clinic",
+  },
+  {
     title: "Todo App",
     description: "Task management app with add, delete, and update features.",
     tech: "React, Tailwind CSS",
@@ -64,10 +72,12 @@ const item = {
   },
 };
 
+// ... (projects array and variants same rahengy)
+
 const Projects = () => {
   return (
     <section className="relative py-24 bg-black px-6 overflow-hidden">
-      {/* Background Glow */}
+      {/* Background Glows */}
       <div className="absolute w-72 h-72 bg-red-500/20 blur-3xl rounded-full top-20 left-10"></div>
       <div className="absolute w-72 h-72 bg-red-500/20 blur-3xl rounded-full bottom-20 right-10"></div>
 
@@ -86,33 +96,37 @@ const Projects = () => {
           My <span className="text-red-400">Projects</span>
         </motion.h2>
 
-        {/* Grid */}
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Grid Update: Added grid-rows-auto and items-stretch */}
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
           {projects.map((project, index) => (
             <motion.div
               key={index}
               variants={item}
               whileHover={{ scale: 1.05 }}
-              className="bg-gray-900 border border-gray-800 rounded-xl p-6 shadow-lg hover:border-red-400 transition"
+              /* Added: h-full flex flex-col to keep heights equal */
+              className="bg-gray-900 border border-gray-800 rounded-xl p-6 shadow-lg hover:border-red-400 transition flex flex-col h-full"
             >
               <h3 className="text-xl font-semibold text-white">
                 {project.title}
               </h3>
 
-              <p className="mt-3 text-gray-400 text-sm">
+              {/* Added: flex-grow taake ye space le le aur buttons niche rahein */}
+              <p className="mt-3 text-gray-400 text-sm flex-grow">
                 {project.description}
               </p>
 
-              <p className="mt-4 text-sm text-red-400">{project.tech}</p>
+              <p className="mt-4 text-sm text-red-400 font-medium">
+                {project.tech}
+              </p>
 
-              {/* Buttons */}
+              {/* Buttons: Fixed at the bottom */}
               <div className="mt-6 flex gap-4 flex-wrap">
                 {project.live && (
                   <a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 bg-red-400 text-white rounded-md text-sm"
+                    className="px-4 py-2 bg-red-400 text-white rounded-md text-sm font-medium hover:bg-red-500 transition"
                   >
                     Live
                   </a>
