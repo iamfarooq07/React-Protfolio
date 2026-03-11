@@ -21,10 +21,10 @@ const item = {
 
 const About = () => {
   return (
-    <section className="relative py-40 bg-black px-6 min-h-screen overflow-hidden">
+    <section className="relative py-40 bg-background px-6 min-h-screen overflow-hidden transition-colors duration-300">
       {/* Background Glow (Same as Hero) */}
-      <div className="absolute w-72 h-72 bg-red-500/20 blur-3xl rounded-full top-20 left-10"></div>
-      <div className="absolute w-72 h-72 bg-red-500/20 blur-3xl rounded-full bottom-20 right-10"></div>
+      <div className="absolute w-72 h-72 bg-red-500/20 dark:bg-red-500/10 blur-3xl rounded-full top-20 left-10"></div>
+      <div className="absolute w-72 h-72 bg-red-500/20 dark:bg-red-500/10 blur-3xl rounded-full bottom-20 right-10"></div>
 
       <motion.div
         variants={container}
@@ -36,7 +36,7 @@ const About = () => {
         {/* Heading */}
         <motion.h2
           variants={item}
-          className="text-3xl md:text-4xl font-bold text-white"
+          className="text-3xl md:text-4xl font-bold text-foreground"
         >
           About <span className="text-red-400">Me</span>
         </motion.h2>
@@ -44,7 +44,7 @@ const About = () => {
         {/* Description */}
         <motion.p
           variants={item}
-          className="mt-6 text-gray-400 leading-relaxed"
+          className="mt-6 text-muted-foreground leading-relaxed"
         >
           I'm a passionate Frontend / Full Stack Developer who enjoys building
           modern, responsive, and user-friendly web applications. I work mainly
@@ -60,37 +60,37 @@ const About = () => {
           {/* Card 1 */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-red-400 transition"
+            className="bg-card p-6 rounded-xl border border-border hover:border-red-400 transition"
           >
             <h3 className="text-2xl font-bold text-red-400">10+</h3>
-            <p className="text-gray-400 mt-2">Projects</p>
+            <p className="text-muted-foreground mt-2">Projects</p>
           </motion.div>
 
           {/* Card 2 */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-red-400 transition"
+            className="bg-card p-6 rounded-xl border border-border hover:border-red-400 transition"
           >
             <h3 className="text-2xl font-bold text-red-400">2+</h3>
-            <p className="text-gray-400 mt-2">Year Learning</p>
+            <p className="text-muted-foreground mt-2">Year Learning</p>
           </motion.div>
 
           {/* Card 3 - Certificates */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-red-400 transition"
+            className="bg-card p-6 rounded-xl border border-border hover:border-red-400 transition"
           >
             <h3 className="text-2xl font-bold text-red-400">6+</h3>
-            <p className="text-gray-400 mt-2">Certificates</p>
+            <p className="text-muted-foreground mt-2">Certificates</p>
           </motion.div>
 
           {/* Card 4 */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-red-400 transition"
+            className="bg-card p-6 rounded-xl border border-border hover:border-red-400 transition"
           >
             <h3 className="text-2xl font-bold text-red-400">100%</h3>
-            <p className="text-gray-400 mt-2">Passion</p>
+            <p className="text-muted-foreground mt-2">Passion</p>
           </motion.div>
         </motion.div>
       </motion.div>

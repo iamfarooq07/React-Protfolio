@@ -8,12 +8,12 @@ const Footer = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="bg-gray-900 text-gray-400 pt-16 px-6"
+      className="bg-card text-muted-foreground pt-16 px-6 border-t border-border transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 pb-12">
         {/* Brand / About */}
         <div>
-          <h2 className="text-2xl font-bold text-white">
+          <h2 className="text-2xl font-bold text-foreground">
             Farooq<span className="text-red-400">Dev</span>
           </h2>
           <p className="mt-4 text-sm leading-relaxed">
@@ -25,7 +25,7 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-4">Quick Links</h3>
           <ul className="space-y-3 text-sm">
             <li>
               <Link to={"/"} className="hover:text-red-400 cursor-pointer">
@@ -66,7 +66,7 @@ const Footer = () => {
 
         {/* Technologies */}
         <div>
-          <h3 className="text-lg font-semibold text-white mb-4">
+          <h3 className="text-lg font-semibold text-foreground mb-4">
             Technologies
           </h3>
           <ul className="space-y-3 text-sm">
@@ -80,16 +80,16 @@ const Footer = () => {
 
         {/* Contact Info */}
         <div>
-          <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-4">Contact</h3>
           <ul className="space-y-3 text-sm">
             <li>
               {" "}
-              <span className="text-white text-xl">Email</span> :
+              <span className="text-foreground text-xl">Email</span> :
               mfarooq556678899@gmail.com
             </li>
             <li>
               {" "}
-              <span className="text-white text-xl">Location</span> : Nazimabad
+              <span className="text-foreground text-xl">Location</span> : Nazimabad
               Block.5 Karachi Pakistan
             </li>
           </ul>
@@ -115,7 +115,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-700 py-6 text-center text-sm">
+      <div className="border-t border-border py-6 text-center text-sm">
         <p>
           © {new Date().getFullYear()}{" "}
           <span className="text-red-400">Muhammad Farooq</span>. All rights

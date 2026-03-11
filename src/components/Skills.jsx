@@ -35,10 +35,10 @@ const item = {
 
 const Skills = () => {
   return (
-    <section className="relative py-24 bg-black px-6 overflow-hidden">
+    <section className="relative py-24 bg-background px-6 overflow-hidden transition-colors duration-300">
       {/* Background Glow (same theme) */}
-      <div className="absolute w-72 h-72 bg-red-500/20 blur-3xl rounded-full top-10 left-10"></div>
-      <div className="absolute w-72 h-72 bg-red-500/20 blur-3xl rounded-full bottom-10 right-10"></div>
+      <div className="absolute w-72 h-72 bg-red-500/20 dark:bg-red-500/10 blur-3xl rounded-full top-10 left-10"></div>
+      <div className="absolute w-72 h-72 bg-red-500/20 dark:bg-red-500/10 blur-3xl rounded-full bottom-10 right-10"></div>
 
       <motion.div
         variants={container}
@@ -50,7 +50,7 @@ const Skills = () => {
         {/* Heading */}
         <motion.h2
           variants={item}
-          className="text-3xl md:text-4xl font-bold text-center text-white"
+          className="text-3xl md:text-4xl font-bold text-center text-foreground"
         >
           My <span className="text-red-400">Skills</span>
         </motion.h2>
@@ -58,7 +58,7 @@ const Skills = () => {
         {/* Skills Card */}
         <motion.div
           variants={item}
-          className="mt-12 bg-gray-900 border border-gray-800 rounded-xl p-8 shadow-lg"
+          className="mt-12 bg-card border border-border rounded-xl p-8 shadow-lg"
         >
           <div className="space-y-6">
             {skills.map((skill, index) => (
@@ -69,12 +69,12 @@ const Skills = () => {
               >
                 {/* Skill Name */}
                 <div className="flex justify-between mb-1">
-                  <span className="text-gray-300">{skill.name}</span>
-                  <span className="text-gray-400">{skill.level}%</span>
+                  <span className="text-foreground">{skill.name}</span>
+                  <span className="text-muted-foreground">{skill.level}%</span>
                 </div>
 
                 {/* Progress Bar */}
-                <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                <div className="w-full bg-secondary rounded-full h-3 overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}

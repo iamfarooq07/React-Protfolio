@@ -16,10 +16,10 @@ const item = {
 
 const Contact = () => {
   return (
-    <section className="relative py-24 bg-black px-6 overflow-hidden">
+    <section className="relative py-24 bg-background px-6 overflow-hidden transition-colors duration-300">
       {/* Background Glow */}
-      <div className="absolute w-72 h-72 bg-red-500/20 blur-3xl rounded-full top-10 left-10"></div>
-      <div className="absolute w-72 h-72 bg-red-500/20 blur-3xl rounded-full bottom-10 right-10"></div>
+      <div className="absolute w-72 h-72 bg-red-500/20 dark:bg-red-500/10 blur-3xl rounded-full top-10 left-10"></div>
+      <div className="absolute w-72 h-72 bg-red-500/20 dark:bg-red-500/10 blur-3xl rounded-full bottom-10 right-10"></div>
 
       <motion.div
         variants={container}
@@ -31,34 +31,34 @@ const Contact = () => {
         {/* Heading */}
         <motion.h2
           variants={item}
-          className="text-3xl md:text-4xl font-bold text-center text-white"
+          className="text-3xl md:text-4xl font-bold text-center text-foreground"
         >
           Contact <span className="text-red-400">Me</span>
         </motion.h2>
 
-        <motion.p variants={item} className="mt-4 text-center text-gray-400">
+        <motion.p variants={item} className="mt-4 text-center text-muted-foreground">
           Feel free to reach out for collaborations or opportunities.
         </motion.p>
 
         {/* Form Card */}
         <motion.form
           variants={item}
-          className="mt-10 bg-gray-900 border border-gray-800 rounded-xl p-8 shadow-lg space-y-6"
+          className="mt-10 bg-card border border-border rounded-xl p-8 shadow-lg space-y-6"
         >
           <input
             type="text"
             placeholder="Your Name"
-            className="w-full p-4 rounded-lg bg-gray-800 text-white outline-none focus:ring-2 focus:ring-red-400"
+            className="w-full p-4 rounded-lg bg-secondary text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-red-400"
           />
           <input
             type="email"
             placeholder="Your Email"
-            className="w-full p-4 rounded-lg bg-gray-800 text-white outline-none focus:ring-2 focus:ring-red-400"
+            className="w-full p-4 rounded-lg bg-secondary text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-red-400"
           />
           <textarea
             rows="5"
             placeholder="Your Message"
-            className="w-full p-4 rounded-lg bg-gray-800 text-white outline-none focus:ring-2 focus:ring-red-400"
+            className="w-full p-4 rounded-lg bg-secondary text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-red-400"
           ></textarea>
           <button
             type="submit"

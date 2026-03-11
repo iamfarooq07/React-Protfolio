@@ -76,10 +76,10 @@ const item = {
 
 const Projects = () => {
   return (
-    <section className="relative py-24 bg-black px-6 overflow-hidden">
+    <section className="relative py-24 bg-background px-6 overflow-hidden transition-colors duration-300">
       {/* Background Glows */}
-      <div className="absolute w-72 h-72 bg-red-500/20 blur-3xl rounded-full top-20 left-10"></div>
-      <div className="absolute w-72 h-72 bg-red-500/20 blur-3xl rounded-full bottom-20 right-10"></div>
+      <div className="absolute w-72 h-72 bg-red-500/20 dark:bg-red-500/10 blur-3xl rounded-full top-20 left-10"></div>
+      <div className="absolute w-72 h-72 bg-red-500/20 dark:bg-red-500/10 blur-3xl rounded-full bottom-20 right-10"></div>
 
       <motion.div
         variants={container}
@@ -91,7 +91,7 @@ const Projects = () => {
         {/* Heading */}
         <motion.h2
           variants={item}
-          className="text-3xl md:text-4xl font-bold text-center text-white"
+          className="text-3xl md:text-4xl font-bold text-center text-foreground"
         >
           My <span className="text-red-400">Projects</span>
         </motion.h2>
@@ -104,14 +104,14 @@ const Projects = () => {
               variants={item}
               whileHover={{ scale: 1.05 }}
               /* Added: h-full flex flex-col to keep heights equal */
-              className="bg-gray-900 border border-gray-800 rounded-xl p-6 shadow-lg hover:border-red-400 transition flex flex-col h-full"
+              className="bg-card border border-border rounded-xl p-6 shadow-lg hover:border-red-400 transition flex flex-col h-full"
             >
-              <h3 className="text-xl font-semibold text-white">
+              <h3 className="text-xl font-semibold text-foreground">
                 {project.title}
               </h3>
 
               {/* Added: flex-grow taake ye space le le aur buttons niche rahein */}
-              <p className="mt-3 text-gray-400 text-sm flex-grow">
+              <p className="mt-3 text-muted-foreground text-sm flex-grow">
                 {project.description}
               </p>
 
