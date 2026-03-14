@@ -1,49 +1,46 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { motion } from "motion/react";
 import { Sun, Moon } from "lucide-react";
 
 const ThemeSwitcherSimple = () => {
   const [theme, setTheme] = useState(() => {
-    // Check localStorage first, then system preference
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      return savedTheme;
-    }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
+    const saved = localStorage.getItem("theme");
+    if (saved) return saved;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   });
 
   useEffect(() => {
-    console.log("Theme changed to:", theme);
-    // Apply theme to document
     const root = document.documentElement;
     if (theme === "dark") {
       root.classList.add("dark");
     } else {
       root.classList.remove("dark");
     }
-    // Save to localStorage
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  const toggleTheme = () => {
-    console.log("Toggle clicked, current theme:", theme);
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-  };
-
   return (
-    <button
-      onClick={toggleTheme}
-      className="relative flex items-center justify-center w-10 h-10 rounded-full bg-secondary hover:bg-accent transition-all duration-300 shadow-md border border-border"
+    <motion.button
+      onClick={() => setTheme((t) => (t === "light" ? "dark" : "light"))}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      className="relative flex items-center justify-center w-9 h-9 rounded-full bg-secondary hover:bg-accent transition-all duration-300 border border-border"
       aria-label="Toggle theme"
       type="button"
     >
-      {theme === "light" ? (
-        <Sun className="w-5 h-5 text-yellow-500 transition-transform duration-300 hover:rotate-45" />
-      ) : (
-        <Moon className="w-5 h-5 text-blue-400 transition-transform duration-300 hover:rotate-12" />
-      )}
-    </button>
+      <motion.div
+        key={theme}
+        initial={{ rotate: -90, opacity: 0 }}
+        animate={{ rotate: 0, opacity: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        {theme === "light" ? (
+          <Sun className="w-4 h-4 text-yellow-500" />
+        ) : (
+          <Moon className="w-4 h-4 text-blue-400" />
+        )}
+      </motion.div>
+    </motion.button>
   );
 };
 

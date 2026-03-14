@@ -1,93 +1,116 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
+import {
+  FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaBootstrap,
+} from "react-icons/fa";
+import {
+  SiTailwindcss, SiExpress, SiMongodb, SiPostman, SiNetlify, SiVite,
+} from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 
-const skills = [
-  { name: "HTML", level: 95 },
-  { name: "CSS / SCSS", level: 90 },
-  { name: "JavaScript (ES6+)", level: 90 },
-  { name: "React.js", level: 85 },
-  { name: "Tailwind CSS / Bootstrap", level: 85 },
-  { name: "Node.js", level: 80 },
-  { name: "Express.js", level: 80 },
-  { name: "MongoDB / Mongoose", level: 75 },
-  { name: "Git & GitHub", level: 85 },
-  { name: "REST APIs / Postman", level: 80 },
-  { name: "Authentication & JWT", level: 75 },
+const categories = [
+  {
+    title: "Frontend",
+    gradient: "from-cyan-500 to-blue-500",
+    skills: [
+      { name: "HTML5", Icon: FaHtml5, color: "text-orange-500" },
+      { name: "CSS3", Icon: FaCss3Alt, color: "text-blue-500" },
+      { name: "JavaScript", Icon: FaJs, color: "text-yellow-400" },
+      { name: "React", Icon: FaReact, color: "text-cyan-400" },
+      { name: "Tailwind CSS", Icon: SiTailwindcss, color: "text-sky-400" },
+      { name: "Bootstrap", Icon: FaBootstrap, color: "text-purple-500" },
+    ],
+  },
+  {
+    title: "Backend",
+    gradient: "from-green-500 to-emerald-500",
+    skills: [
+      { name: "Node.js", Icon: FaNodeJs, color: "text-green-500" },
+      { name: "Express.js", Icon: SiExpress, color: "text-gray-400" },
+      { name: "MongoDB", Icon: SiMongodb, color: "text-green-400" },
+      { name: "REST API", Icon: SiPostman, color: "text-orange-400" },
+    ],
+  },
+  {
+    title: "Tools",
+    gradient: "from-violet-500 to-pink-500",
+    skills: [
+      { name: "Git", Icon: FaGitAlt, color: "text-orange-500" },
+      { name: "GitHub", Icon: FaGithub, color: "text-foreground" },
+      { name: "Netlify", Icon: SiNetlify, color: "text-teal-400" },
+      { name: "VS Code", Icon: VscVscode, color: "text-blue-400" },
+      { name: "Vite", Icon: SiVite, color: "text-violet-400" },
+    ],
+  },
 ];
 
-// Animation Variants
 const container = {
   hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
+  visible: { transition: { staggerChildren: 0.1 } },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 25 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
 };
 
 const Skills = () => {
   return (
-    <section className="relative py-24 bg-background px-6 overflow-hidden transition-colors duration-300">
-      {/* Background Glow (same theme) */}
-      <div className="absolute w-72 h-72 bg-red-500/20 dark:bg-red-500/10 blur-3xl rounded-full top-10 left-10"></div>
-      <div className="absolute w-72 h-72 bg-red-500/20 dark:bg-red-500/10 blur-3xl rounded-full bottom-10 right-10"></div>
+    <section className="relative py-28 bg-background px-6 overflow-hidden">
+      <div className="absolute w-80 h-80 bg-cyan-500/10 blur-3xl rounded-full top-10 left-10 pointer-events-none" />
+      <div className="absolute w-80 h-80 bg-violet-500/10 blur-3xl rounded-full bottom-10 right-10 pointer-events-none" />
 
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="max-w-4xl mx-auto relative z-10"
-      >
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Heading */}
-        <motion.h2
-          variants={item}
-          className="text-3xl md:text-4xl font-bold text-center text-foreground"
-        >
-          My <span className="text-red-400">Skills</span>
-        </motion.h2>
-
-        {/* Skills Card */}
         <motion.div
-          variants={item}
-          className="mt-12 bg-card border border-border rounded-xl p-8 shadow-lg"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          <div className="space-y-6">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={index}
-                variants={item}
-                whileHover={{ scale: 1.02 }}
-              >
-                {/* Skill Name */}
-                <div className="flex justify-between mb-1">
-                  <span className="text-foreground">{skill.name}</span>
-                  <span className="text-muted-foreground">{skill.level}%</span>
-                </div>
-
-                {/* Progress Bar */}
-                <div className="w-full bg-secondary rounded-full h-3 overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="h-3 bg-red-500 rounded-full"
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <span className="text-sm font-semibold text-violet-400 uppercase tracking-widest">What I Know</span>
+          <h2 className="mt-2 text-4xl md:text-5xl font-bold text-foreground">
+            Tech <span className="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">Stack</span>
+          </h2>
         </motion.div>
-      </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {categories.map((cat) => (
+            <motion.div
+              key={cat.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.5 }}
+              className="bg-card border border-border rounded-2xl p-6 hover:border-violet-500/40 transition-all duration-300"
+            >
+              <div className={`inline-block text-sm font-bold px-3 py-1 rounded-full bg-gradient-to-r ${cat.gradient} text-white mb-6`}>
+                {cat.title}
+              </div>
+
+              <motion.div
+                variants={container}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="grid grid-cols-2 gap-3"
+              >
+                {cat.skills.map(({ name, Icon, color }) => (
+                  <motion.div
+                    key={name}
+                    variants={item}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    className="flex items-center gap-3 p-3 rounded-xl bg-secondary/50 hover:bg-secondary transition-all duration-200 cursor-default"
+                  >
+                    <Icon className={`${color} flex-shrink-0`} size={22} />
+                    <span className="text-sm text-foreground font-medium">{name}</span>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

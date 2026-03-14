@@ -1,126 +1,100 @@
-import { motion } from "framer-motion";
-import { Link } from "react-router";
+import { motion } from "motion/react";
+import { FaGithub, FaLinkedin, FaHeart } from "react-icons/fa";
+
+const links = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Features", href: "#features" },
+  { label: "Contact", href: "#contact" },
+];
 
 const Footer = () => {
+  const scrollTo = (href) => {
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <motion.footer
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="bg-card text-muted-foreground pt-16 px-6 border-t border-border transition-colors duration-300"
+      transition={{ duration: 0.6 }}
+      className="bg-card border-t border-border px-6 py-12"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 pb-12">
-        {/* Brand / About */}
-        <div>
-          <h2 className="text-2xl font-bold text-foreground">
-            Farooq<span className="text-red-400">Dev</span>
-          </h2>
-          <p className="mt-4 text-sm leading-relaxed">
-            Passionate Frontend / Full Stack Developer focused on building
-            modern, scalable, and user-friendly web applications using
-            JavaScript and React.
-          </p>
-        </div>
-
-        {/* Quick Links */}
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-4">Quick Links</h3>
-          <ul className="space-y-3 text-sm">
-            <li>
-              <Link to={"/"} className="hover:text-red-400 cursor-pointer">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to={"/about"} className="hover:text-red-400 cursor-pointer">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={"/skills"}
-                className="hover:text-red-400 cursor-pointer"
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-border">
+          {/* Brand */}
+          <div>
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">
+              FarooqDev
+            </h2>
+            <p className="mt-3 text-muted-foreground text-sm leading-relaxed max-w-xs">
+              Full Stack Developer focused on building modern, scalable, and user-friendly web applications.
+            </p>
+            <div className="flex gap-4 mt-5">
+              <motion.a
+                href="https://github.com/iamfarooq07"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.2, y: -2 }}
+                className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                Skills
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={"/projects"}
-                className="hover:text-red-400 cursor-pointer"
+                <FaGithub size={22} />
+              </motion.a>
+              <motion.a
+                href="https://www.linkedin.com/in/muhammad-farooq-123f/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.2, y: -2 }}
+                className="text-muted-foreground hover:text-blue-400 transition-colors"
               >
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={"/contact"}
-                className="hover:text-red-400 cursor-pointer"
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
+                <FaLinkedin size={22} />
+              </motion.a>
+            </div>
+          </div>
 
-        {/* Technologies */}
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-4">
-            Technologies
-          </h3>
-          <ul className="space-y-3 text-sm">
-            <li>HTML / CSS / JavaScript</li>
-            <li>React.js / Tailwind CSS</li>
-            <li>Node.js / Express.js</li>
-            <li>MongoDB / Mongoose</li>
-            <li>Git & GitHub</li>
-          </ul>
-        </div>
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              {links.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
+                    className="text-muted-foreground hover:text-violet-400 transition-colors text-sm"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        {/* Contact Info */}
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-4">Contact</h3>
-          <ul className="space-y-3 text-sm">
-            <li>
-              {" "}
-              <span className="text-foreground text-xl">Email</span> :
-              mfarooq556678899@gmail.com
-            </li>
-            <li>
-              {" "}
-              <span className="text-foreground text-xl">Location</span> : Nazimabad
-              Block.5 Karachi Pakistan
-            </li>
-          </ul>
-
-          {/* Social Links */}
-          <div className="flex gap-5 mt-6">
-            <a
-              href="https://github.com/iamfarooq07"
-              target="_blank"
-              className="hover:text-red-400 transition"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/muhammad-farooq-123f/"
-              target="_blank"
-              className="hover:text-red-400 transition"
-            >
-              LinkedIn
-            </a>
+          {/* Tech */}
+          <div>
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">Technologies</h3>
+            <div className="flex flex-wrap gap-2">
+              {["React", "Node.js", "MongoDB", "Express", "Tailwind", "JavaScript", "Git"].map((t) => (
+                <span
+                  key={t}
+                  className="px-2 py-1 text-xs rounded-full bg-secondary text-muted-foreground border border-border"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-border py-6 text-center text-sm">
-        <p>
-          © {new Date().getFullYear()}{" "}
-          <span className="text-red-400">Muhammad Farooq</span>. All rights
-          reserved.
-        </p>
+        {/* Bottom */}
+        <div className="pt-6 text-center text-sm text-muted-foreground flex items-center justify-center gap-1">
+          © {new Date().getFullYear()} Muhammad Farooq — Built with
+          <FaHeart className="text-pink-500 mx-1" size={12} />
+          using React & Tailwind CSS
+        </div>
       </div>
     </motion.footer>
   );
