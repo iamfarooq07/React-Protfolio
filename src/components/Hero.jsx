@@ -20,8 +20,20 @@ const floatingIcons = [
   { Icon: FaReact, color: "text-cyan-400", x: "10%", y: "20%", delay: 0 },
   { Icon: FaNodeJs, color: "text-green-400", x: "85%", y: "15%", delay: 0.5 },
   { Icon: SiMongodb, color: "text-green-500", x: "8%", y: "70%", delay: 1 },
-  { Icon: SiTailwindcss, color: "text-sky-400", x: "88%", y: "65%", delay: 1.5 },
-  { Icon: SiJavascript, color: "text-yellow-400", x: "75%", y: "80%", delay: 0.8 },
+  {
+    Icon: SiTailwindcss,
+    color: "text-sky-400",
+    x: "88%",
+    y: "65%",
+    delay: 1.5,
+  },
+  {
+    Icon: SiJavascript,
+    color: "text-yellow-400",
+    x: "75%",
+    y: "80%",
+    delay: 0.8,
+  },
   { Icon: SiExpress, color: "text-gray-400", x: "20%", y: "85%", delay: 1.2 },
 ];
 
@@ -45,7 +57,10 @@ const Hero = () => {
     let timeout;
     if (typing) {
       if (displayed.length < current.length) {
-        timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 80);
+        timeout = setTimeout(
+          () => setDisplayed(current.slice(0, displayed.length + 1)),
+          80,
+        );
       } else {
         timeout = setTimeout(() => setTyping(false), 1500);
       }
@@ -74,7 +89,12 @@ const Hero = () => {
           className={`absolute hidden lg:block ${color} opacity-30`}
           style={{ left: x, top: y }}
           animate={{ y: [0, -15, 0] }}
-          transition={{ repeat: Infinity, duration: 3 + i * 0.4, delay, ease: "easeInOut" }}
+          transition={{
+            repeat: Infinity,
+            duration: 3 + i * 0.4,
+            delay,
+            ease: "easeInOut",
+          }}
         >
           <Icon size={36} />
         </motion.div>
@@ -85,38 +105,58 @@ const Hero = () => {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="text-center max-w-3xl z-10"
+        className="text-center max-w-3xl z-10 "
       >
-        <motion.div variants={item} className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-400 text-sm font-medium mb-6">
-          <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
+        <motion.div
+          variants={item}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-400 text-sm font-medium mb-6"
+        >
+          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
           Available for work
         </motion.div>
 
-        <motion.h1 variants={item} className="text-5xl md:text-7xl font-bold text-foreground leading-tight">
+        <motion.h1
+          variants={item}
+          className="text-5xl md:text-7xl font-bold text-foreground leading-tight"
+        >
           Hi, I'm{" "}
           <span className="bg-gradient-to-r from-violet-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
             Muhammad Farooq
           </span>
         </motion.h1>
 
-        <motion.div variants={item} className="mt-4 text-xl md:text-2xl font-semibold text-muted-foreground h-8">
+        <motion.div
+          variants={item}
+          className="mt-4 text-xl md:text-2xl font-semibold text-muted-foreground h-8"
+        >
           <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
             {displayed}
           </span>
           <span className="animate-pulse text-violet-400">|</span>
         </motion.div>
 
-        <motion.p variants={item} className="mt-6 text-muted-foreground text-lg max-w-xl mx-auto leading-relaxed">
+        <motion.p
+          variants={item}
+          className="mt-6 text-muted-foreground text-lg max-w-xl mx-auto leading-relaxed"
+        >
           I build modern, responsive web applications using JavaScript, React,
           and the MERN stack. Passionate about clean code, performance, and
           creating user-friendly experiences.
         </motion.p>
 
         {/* CTA Buttons */}
-        <motion.div variants={item} className="mt-10 flex gap-4 justify-center flex-wrap">
+        <motion.div
+          variants={item}
+          className="mt-10 flex gap-4 justify-center flex-wrap"
+        >
           <motion.a
             href="#projects"
-            onClick={(e) => { e.preventDefault(); document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" }); }}
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .querySelector("#projects")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-7 py-3 rounded-xl bg-gradient-to-r from-violet-500 to-pink-500 text-white font-semibold shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-shadow"
@@ -125,7 +165,12 @@ const Hero = () => {
           </motion.a>
           <motion.a
             href="#contact"
-            onClick={(e) => { e.preventDefault(); document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" }); }}
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .querySelector("#contact")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-7 py-3 rounded-xl border border-violet-500/50 text-foreground font-semibold hover:bg-violet-500/10 transition"
@@ -169,7 +214,12 @@ const Hero = () => {
       {/* Scroll Down Indicator */}
       <motion.a
         href="#about"
-        onClick={(e) => { e.preventDefault(); document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" }); }}
+        onClick={(e) => {
+          e.preventDefault();
+          document
+            .querySelector("#about")
+            ?.scrollIntoView({ behavior: "smooth" });
+        }}
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 1.5 }}
         className="absolute bottom-10 text-muted-foreground hover:text-foreground transition-colors"
