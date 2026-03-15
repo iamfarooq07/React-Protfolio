@@ -1,9 +1,31 @@
 import { motion } from "motion/react";
 import {
-  FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaBootstrap,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+  FaBootstrap,
 } from "react-icons/fa";
 import {
-  SiTailwindcss, SiExpress, SiMongodb, SiPostman, SiNetlify, SiVite,
+  SiTailwindcss,
+  SiExpress,
+  SiMongodb,
+  SiPostman,
+  SiNetlify,
+  SiVite,
+  SiVercel,
+  SiRailway,
+  SiGithubcopilot,
+  SiRender,
+  SiShadcnui,
+  SiMui,
+  SiAntdesign,
+  SiFramer,
+  SiGreensock,
+  SiFigma,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
@@ -31,14 +53,45 @@ const categories = [
     ],
   },
   {
-    title: "Tools",
+    title: "Frontend Tools",
+    gradient: "from-blue-500 to-cyan-500",
+    skills: [
+      { name: "VS Code", Icon: VscVscode, color: "text-blue-400" },
+      { name: "Vite", Icon: SiVite, color: "text-violet-400" },
+      {
+        name: "GitHub Copilot",
+        Icon: SiGithubcopilot,
+        color: "text-green-400",
+      },
+    ],
+  },
+  {
+    title: "Backend & DevOps",
     gradient: "from-violet-500 to-pink-500",
     skills: [
       { name: "Git", Icon: FaGitAlt, color: "text-orange-500" },
       { name: "GitHub", Icon: FaGithub, color: "text-foreground" },
       { name: "Netlify", Icon: SiNetlify, color: "text-teal-400" },
-      { name: "VS Code", Icon: VscVscode, color: "text-blue-400" },
-      { name: "Vite", Icon: SiVite, color: "text-violet-400" },
+      { name: "Vercel", Icon: SiVercel, color: "text-black dark:text-white" },
+      { name: "Railway", Icon: SiRailway, color: "text-purple-500" },
+      { name: "Render", Icon: SiRender, color: "text-indigo-400" },
+    ],
+  },
+  {
+    title: "UI / Design Tools",
+    gradient: "from-purple-500 to-indigo-500",
+    skills: [
+      {
+        name: "Shadcn UI",
+        Icon: SiShadcnui,
+        color: "text-black dark:text-white",
+      },
+      { name: "Magic UI", Icon: SiShadcnui, color: "text-purple-400" },
+      { name: "Material UI", Icon: SiMui, color: "text-blue-500" },
+      { name: "Ant Design", Icon: SiAntdesign, color: "text-blue-400" },
+      { name: "Framer Motion", Icon: SiFramer, color: "text-pink-500" },
+      { name: "GSAP", Icon: SiGreensock, color: "text-green-500" },
+      { name: "Figma", Icon: SiFigma, color: "text-pink-500" },
     ],
   },
 ];
@@ -68,9 +121,14 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-violet-400 uppercase tracking-widest">What I Know</span>
+          <span className="text-sm font-semibold text-violet-400 uppercase tracking-widest">
+            What I Know
+          </span>
           <h2 className="mt-2 text-4xl md:text-5xl font-bold text-foreground">
-            Tech <span className="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">Stack</span>
+            Tech{" "}
+            <span className="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">
+              Stack
+            </span>
           </h2>
         </motion.div>
 
@@ -84,7 +142,9 @@ const Skills = () => {
               transition={{ duration: 0.5 }}
               className="bg-card border border-border rounded-2xl p-6 hover:border-violet-500/40 transition-all duration-300"
             >
-              <div className={`inline-block text-sm font-bold px-3 py-1 rounded-full bg-gradient-to-r ${cat.gradient} text-white mb-6`}>
+              <div
+                className={`inline-block text-sm font-bold px-3 py-1 rounded-full bg-gradient-to-r ${cat.gradient} text-white mb-6`}
+              >
                 {cat.title}
               </div>
 
@@ -103,7 +163,9 @@ const Skills = () => {
                     className="flex items-center gap-3 p-3 rounded-xl bg-secondary/50 hover:bg-secondary transition-all duration-200 cursor-default"
                   >
                     <Icon className={`${color} flex-shrink-0`} size={22} />
-                    <span className="text-sm text-foreground font-medium">{name}</span>
+                    <span className="text-sm text-foreground font-medium">
+                      {name}
+                    </span>
                   </motion.div>
                 ))}
               </motion.div>
