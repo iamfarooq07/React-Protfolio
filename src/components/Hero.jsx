@@ -10,7 +10,6 @@ import { HiArrowDown } from "react-icons/hi";
 import { useEffect, useState } from "react";
 
 const roles = [
-  "Full Stack Developer",
   "MERN Stack Developer",
   "React Developer",
   "Node.js Developer",
