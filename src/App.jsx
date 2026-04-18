@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useScroll } from "motion/react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Features from "./components/Features";
@@ -66,6 +67,7 @@ function App() {
             <main>
               <section id="home"><Hero /></section>
               <section id="about"><About /></section>
+              <section id="experience"><Experience /></section>
               <section id="skills"><Skills /></section>
               <section id="projects"><Projects /></section>
               <section id="features"><Features /></section>
