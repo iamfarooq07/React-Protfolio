@@ -9,11 +9,7 @@ import {
 import { HiArrowDown } from "react-icons/hi";
 import { useEffect, useState } from "react";
 
-const roles = [
-  "MERN Stack Developer",
-  "React Developer",
-  "Node.js Developer",
-];
+const roles = ["MERN Stack Developer", "React Developer", "Node.js Developer"];
 
 const floatingIcons = [
   { Icon: FaReact, color: "text-cyan-400", x: "10%", y: "20%", delay: 0 },
@@ -177,7 +173,7 @@ const Hero = () => {
             Contact Me
           </motion.a>
           <motion.a
-            href="/Muhammad_Farooq_CV.pdf"
+            href="/M-Farooq.pdf"
             download
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
