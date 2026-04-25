@@ -30,6 +30,15 @@ const projects = [
     gradient: "from-cyan-500 to-blue-600",
   },
   {
+    title: "MERN Todo App",
+    description:
+      "Full-stack task management application built with MERN stack. Includes user authentication, CRUD operations (add, update, delete tasks), and API integration with MongoDB database.",
+    tech: ["MongoDB", "Express.js", "React", "Node.js"],
+    live: "https://mern-stack-todo-list-alpha.vercel.app/",
+    github: "https://github.com/iamfarooq07/MERN-Stack-Todo-List",
+    gradient: "from-blue-500 to-indigo-600",
+  },
+  {
     title: "Todo App",
     description:
       "Task management app with add, delete, update, and filter features. Clean and minimal UI.",
@@ -37,15 +46,6 @@ const projects = [
     live: "https://react-todo-app-i15c.vercel.app/",
     github: "https://github.com/iamfarooq07/React-Todo-App",
     gradient: "from-green-500 to-emerald-600",
-  },
-  {
-    title: "Password Generator",
-    description:
-      "Generate secure passwords with custom length, symbols, numbers, and uppercase options.",
-    tech: ["JavaScript", "Tailwind CSS"],
-    live: "https://iamfarooq07.github.io/5-day-Password-Genrater/",
-    github: "https://github.com/iamfarooq07/5-day-Password-Genrater",
-    gradient: "from-orange-500 to-amber-600",
   },
   {
     title: "REST API",
@@ -82,9 +82,14 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-violet-400 uppercase tracking-widest">What I've Built</span>
+          <span className="text-sm font-semibold text-violet-400 uppercase tracking-widest">
+            What I've Built
+          </span>
           <h2 className="mt-2 text-4xl md:text-5xl font-bold text-foreground">
-            My <span className="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">Projects</span>
+            My{" "}
+            <span className="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">
+              Projects
+            </span>
           </h2>
         </motion.div>
 
