@@ -45,7 +45,7 @@ const projects = [
     tech: ["React", "Tailwind CSS"],
     live: "https://react-todo-app-i15c.vercel.app/",
     github: "https://github.com/iamfarooq07/React-Todo-App",
-    gradient: "from-green-500 to-emerald-600",
+    gradient: "from-green-500 to-emerald-500",
   },
   {
     title: "REST API",
