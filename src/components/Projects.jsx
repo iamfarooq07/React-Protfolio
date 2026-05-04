@@ -55,6 +55,16 @@ const projects = [
     github: "https://github.com/iamfarooq07/Express-Js-RESTful-Api-",
     gradient: "from-teal-500 to-cyan-600",
   },
+  {
+    title: "Expense Tracker",
+    description:
+      "A powerful financial dashboard to track income and expenses with category-wise filtering and real-time balance calculation.",
+    tech: ["React", "Tailwind CSS", "Framer Motion"],
+    live: "https://espense-tracker-first-inter-project.vercel.app/",
+    github:
+      "https://github.com/iamfarooq07/Espense-Tracker-first-Inter-Project",
+    gradient: "from-blue-600 to-indigo-600",
+  },
 ];
 
 const container = {
