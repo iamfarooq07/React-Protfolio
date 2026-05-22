@@ -71,7 +71,7 @@ const projects = [
       "A comprehensive MERN stack application to generate professional invoices, track billing cycles, manage inventory items, and monitor payments dynamically.",
     tech: ["MongoDB", "Express.js", "React", "Node.js", "Tailwind CSS"],
     live: "https://bulling-software.vercel.app/",
-    github: "https://github.com/iamfarooq07/bulling-software-backend",
+    github: "https://github.com/iamfarooq07/Bulling-Software",
     gradient: "from-emerald-600 to-teal-600", // Billing ke liye green/teal
   },
 ];
