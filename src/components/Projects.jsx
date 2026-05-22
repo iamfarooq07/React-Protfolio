@@ -65,6 +65,15 @@ const projects = [
       "https://github.com/iamfarooq07/Espense-Tracker-first-Inter-Project",
     gradient: "from-blue-600 to-indigo-600",
   },
+  {
+    title: "Billing & Invoice Management System",
+    description:
+      "A comprehensive MERN stack application to generate professional invoices, track billing cycles, manage inventory items, and monitor payments dynamically.",
+    tech: ["MongoDB", "Express.js", "React", "Node.js", "Tailwind CSS"],
+    live: "https://bulling-software.vercel.app/",
+    github: "https://github.com/iamfarooq07/bulling-software-backend",
+    gradient: "from-emerald-600 to-teal-600", // Billing ke liye green/teal
+  },
 ];
 
 const container = {
