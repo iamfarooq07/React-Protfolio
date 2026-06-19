@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaHeart } from "react-icons/fa";
 const links = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Features", href: "#features" },

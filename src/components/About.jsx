@@ -3,7 +3,7 @@ import { FaCode, FaServer, FaDatabase, FaRocket } from "react-icons/fa";
 
 const stats = [
   { icon: FaRocket, value: "10+", label: "Projects Built" },
-  { icon: FaCode, value: "2+", label: "Years Learning" },
+  { icon: FaCode, value: "6+", label: "Years Experience" },
   { icon: FaServer, value: "6+", label: "Certificates" },
   { icon: FaDatabase, value: "100%", label: "Passion" },
 ];
@@ -43,17 +43,19 @@ const About = () => {
           {/* Text */}
           <motion.div variants={item} className="space-y-5">
             <p className="text-muted-foreground leading-relaxed text-lg">
-              I'm a passionate <span className="text-foreground font-semibold">Full Stack Developer</span> who
-              enjoys building modern, responsive, and user-friendly web applications.
+              I'm a <span className="text-foreground font-semibold">Full-Stack MERN Developer</span> based
+              in Karachi, Pakistan, with 6 years of diverse professional experience that shaped a strong
+              work ethic and a pragmatic approach to software engineering.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              My journey started with HTML & CSS, and over the past 2+ years I've grown into
-              the full MERN stack — building everything from REST APIs and authentication systems
-              to polished React frontends.
+              I specialize in the full MERN stack — building everything from secure REST APIs and
+              authentication systems to performant, pixel-perfect React frontends. My background spans
+              multiple industries, giving me an edge in understanding real-world product requirements.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I focus on clean code, performance, and real-world problem solving. Whether it's
-              a pixel-perfect UI or a robust backend API, I bring the same level of care to every layer.
+              I care deeply about clean code, scalable architecture, and delivering experiences that
+              actually work. Whether it's a polished UI or a robust backend, I bring the same level
+              of care to every layer of the stack.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
