@@ -3,6 +3,33 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
+    title: "Enterprise E-Commerce Platform",
+    description:
+      "A production-ready full-stack e-commerce platform built with Next.js and Express.js, featuring secure JWT authentication, role-based admin dashboard, product & category management, shopping cart, order management, Stripe payment integration, image uploads, responsive UI, and optimized deployment using Docker, Vercel, and Render.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "Tailwind CSS",
+      "JWT",
+      "Cloudinary",
+      "Stripe",
+      "Docker",
+      "Vercel",
+      "Render",
+      "Git",
+      "GitHub",
+    ],
+    live: "https://real-porject-e-commerce-part-2.vercel.app/",
+    github: "https://github.com/iamfarooq07/your-ecommerce-repo",
+    gradient: "from-indigo-600 to-violet-600",
+  },
+  {
     title: "AI Clinic Management System",
     description:
       "MERN-based AI clinic system with real-time scheduling, automated patient records, and a sleek dark-mode UI.",
