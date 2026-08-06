@@ -26,6 +26,16 @@ import {
   SiFramer,
   SiGreensock,
   SiFigma,
+  SiTypescript,
+  SiNextdotjs,
+  SiNestjs,
+  SiPostgresql,
+  SiPrisma,
+  SiDocker,
+  SiRedis,
+  SiJsonwebtokens,
+  SiCloudinary,
+  SiSupabase,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
@@ -37,7 +47,13 @@ const categories = [
       { name: "HTML5", Icon: FaHtml5, color: "text-orange-500" },
       { name: "CSS3", Icon: FaCss3Alt, color: "text-blue-500" },
       { name: "JavaScript", Icon: FaJs, color: "text-yellow-400" },
+      { name: "TypeScript", Icon: SiTypescript, color: "text-blue-500" },
       { name: "React", Icon: FaReact, color: "text-cyan-400" },
+      {
+        name: "Next.js",
+        Icon: SiNextdotjs,
+        color: "text-black dark:text-white",
+      },
       { name: "Tailwind CSS", Icon: SiTailwindcss, color: "text-sky-400" },
       { name: "Bootstrap", Icon: FaBootstrap, color: "text-purple-500" },
     ],
@@ -48,8 +64,12 @@ const categories = [
     skills: [
       { name: "Node.js", Icon: FaNodeJs, color: "text-green-500" },
       { name: "Express.js", Icon: SiExpress, color: "text-gray-400" },
+      { name: "NestJS", Icon: SiNestjs, color: "text-red-500" },
       { name: "MongoDB", Icon: SiMongodb, color: "text-green-400" },
+      { name: "PostgreSQL", Icon: SiPostgresql, color: "text-blue-500" },
+      { name: "Prisma", Icon: SiPrisma, color: "text-cyan-300" },
       { name: "REST API", Icon: SiPostman, color: "text-orange-400" },
+      { name: "JWT", Icon: SiJsonwebtokens, color: "text-pink-500" },
     ],
   },
   {
@@ -63,6 +83,11 @@ const categories = [
         Icon: SiGithubcopilot,
         color: "text-green-400",
       },
+      {
+        name: "Supabase",
+        Icon: SiSupabase,
+        color: "text-green-500",
+      },
     ],
   },
   {
@@ -71,6 +96,9 @@ const categories = [
     skills: [
       { name: "Git", Icon: FaGitAlt, color: "text-orange-500" },
       { name: "GitHub", Icon: FaGithub, color: "text-foreground" },
+      { name: "Docker", Icon: SiDocker, color: "text-blue-500" },
+      { name: "Redis", Icon: SiRedis, color: "text-red-500" },
+      { name: "Cloudinary", Icon: SiCloudinary, color: "text-blue-400" },
       { name: "Netlify", Icon: SiNetlify, color: "text-teal-400" },
       { name: "Vercel", Icon: SiVercel, color: "text-black dark:text-white" },
       { name: "Railway", Icon: SiRailway, color: "text-purple-500" },
@@ -132,7 +160,7 @@ const Skills = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
           {categories.map((cat) => (
             <motion.div
               key={cat.title}
