@@ -9,7 +9,7 @@ const contactInfo = [
     label: "Email",
     value: "mfarooq556678899@gmail.com",
     href: "mailto:mfarooq556678899@gmail.com",
-    gradient: "from-violet-500 to-pink-500",
+    gradient: "from-blue-500 to-cyan-500",
   },
   {
     icon: FaGithub,
@@ -30,7 +30,7 @@ const contactInfo = [
     label: "Location",
     value: "Karachi, Pakistan",
     href: null,
-    gradient: "from-red-500 to-rose-600",
+    gradient: "from-emerald-500 to-rose-600",
   },
 ];
 
@@ -58,8 +58,8 @@ const Contact = () => {
 
   return (
     <section className="relative py-28 bg-background px-6 overflow-hidden">
-      <div className="absolute w-80 h-80 bg-violet-500/15 blur-3xl rounded-full top-10 right-10 pointer-events-none" />
-      <div className="absolute w-80 h-80 bg-pink-500/15 blur-3xl rounded-full bottom-10 left-10 pointer-events-none" />
+      <div className="absolute w-80 h-80 bg-blue-500/15 blur-3xl rounded-full top-10 right-10 pointer-events-none" />
+      <div className="absolute w-80 h-80 bg-cyan-500/15 blur-3xl rounded-full bottom-10 left-10 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Heading */}
@@ -70,9 +70,9 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-violet-400 uppercase tracking-widest">Get In Touch</span>
+          <span className="text-sm font-semibold text-blue-400 uppercase tracking-widest">Get In Touch</span>
           <h2 className="mt-2 text-4xl md:text-5xl font-bold text-foreground">
-            Contact <span className="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">Me</span>
+            Contact <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">Me</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-md mx-auto">
             Feel free to reach out for collaborations, opportunities, or just a friendly chat.
@@ -92,7 +92,7 @@ const Contact = () => {
               <motion.div
                 key={label}
                 whileHover={{ x: 4 }}
-                className="flex items-center gap-4 p-4 bg-card border border-border rounded-2xl hover:border-violet-500/40 transition-all duration-300"
+                className="flex items-center gap-4 p-4 bg-card border border-border rounded-2xl hover:border-blue-500/40 transition-all duration-300"
               >
                 <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center flex-shrink-0`}>
                   <Icon className="text-white" size={18} />
@@ -104,7 +104,7 @@ const Contact = () => {
                       href={href}
                       target={href.startsWith("http") ? "_blank" : undefined}
                       rel="noopener noreferrer"
-                      className="text-foreground font-medium hover:text-violet-400 transition-colors text-sm"
+                      className="text-foreground font-medium hover:text-blue-400 transition-colors text-sm"
                     >
                       {value}
                     </a>
@@ -127,31 +127,31 @@ const Contact = () => {
               placeholder="Your Name"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              required
-              className="w-full px-4 py-3 rounded-xl bg-secondary text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-violet-500/50 border border-border transition"
+              requiemerald
+              className="w-full px-4 py-3 rounded-xl bg-secondary text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-blue-500/50 border border-border transition"
             />
             <input
               type="email"
               placeholder="Your Email"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              required
-              className="w-full px-4 py-3 rounded-xl bg-secondary text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-violet-500/50 border border-border transition"
+              requiemerald
+              className="w-full px-4 py-3 rounded-xl bg-secondary text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-blue-500/50 border border-border transition"
             />
             <textarea
               rows={5}
               placeholder="Your Message"
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              required
-              className="w-full px-4 py-3 rounded-xl bg-secondary text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-violet-500/50 border border-border transition resize-none"
+              requiemerald
+              className="w-full px-4 py-3 rounded-xl bg-secondary text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-blue-500/50 border border-border transition resize-none"
             />
 
             <motion.button
               type="submit"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-violet-500 to-pink-500 text-white font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition shadow-lg shadow-violet-500/25"
+              className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition shadow-lg shadow-blue-500/25"
             >
               {sent ? "Message Sent!" : (
                 <>

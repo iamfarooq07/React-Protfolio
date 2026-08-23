@@ -27,7 +27,7 @@ const projects = [
     ],
     live: "https://real-porject-e-commerce-part-2.vercel.app/",
     github: "https://github.com/iamfarooq07/your-ecommerce-repo",
-    gradient: "from-indigo-600 to-violet-600",
+    gradient: "from-indigo-600 to-blue-600",
   },
   {
     title: "AI Clinic Management System",
@@ -36,16 +36,16 @@ const projects = [
     tech: ["MongoDB", "Express", "React", "Node.js", "JWT", "Tailwind"],
     live: "https://opticlinic-ai.vercel.app/",
     github: "https://github.com/iamfarooq07/Frontend-Clinic",
-    gradient: "from-violet-500 to-purple-600",
+    gradient: "from-blue-500 to-purple-600",
   },
   {
     title: "E-Commerce Website",
     description:
-      "Full-featured e-commerce platform with product filtering, sorting, pagination, and cart management.",
+      "Full-featuemerald e-commerce platform with product filtering, sorting, pagination, and cart management.",
     tech: ["React", "JavaScript", "Tailwind CSS"],
     live: "https://e-commerce-website-i8gz4bqui-iamfarooq07s-projects.vercel.app/",
     github: "https://github.com/iamfarooq07/E-Commerce-Website",
-    gradient: "from-pink-500 to-rose-600",
+    gradient: "from-cyan-500 to-rose-600",
   },
   {
     title: "Weather App",
@@ -116,8 +116,8 @@ const item = {
 const Projects = () => {
   return (
     <section className="relative py-28 bg-background px-6 overflow-hidden">
-      <div className="absolute w-80 h-80 bg-pink-500/10 blur-3xl rounded-full top-10 right-10 pointer-events-none" />
-      <div className="absolute w-80 h-80 bg-violet-500/10 blur-3xl rounded-full bottom-10 left-10 pointer-events-none" />
+      <div className="absolute w-80 h-80 bg-cyan-500/10 blur-3xl rounded-full top-10 right-10 pointer-events-none" />
+      <div className="absolute w-80 h-80 bg-blue-500/10 blur-3xl rounded-full bottom-10 left-10 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Heading */}
@@ -128,12 +128,12 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-violet-400 uppercase tracking-widest">
+          <span className="text-sm font-semibold text-blue-400 uppercase tracking-widest">
             What I've Built
           </span>
           <h2 className="mt-2 text-4xl md:text-5xl font-bold text-foreground">
             My{" "}
-            <span className="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
@@ -151,13 +151,13 @@ const Projects = () => {
               key={project.title}
               variants={item}
               whileHover={{ y: -6 }}
-              className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-violet-500/40 transition-all duration-300 flex flex-col"
+              className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-blue-500/40 transition-all duration-300 flex flex-col"
             >
               {/* Gradient Banner */}
               <div className={`h-2 bg-gradient-to-r ${project.gradient}`} />
 
               <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-lg font-bold text-foreground group-hover:text-violet-400 transition-colors">
+                <h3 className="text-lg font-bold text-foreground group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
                 <p className="mt-3 text-muted-foreground text-sm leading-relaxed flex-1">
@@ -183,7 +183,7 @@ const Projects = () => {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-violet-500 to-pink-500 text-white text-sm font-medium hover:opacity-90 transition"
+                      className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-medium hover:opacity-90 transition"
                     >
                       <FaExternalLinkAlt size={12} /> Live
                     </a>
@@ -192,7 +192,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-muted-foreground text-sm hover:text-foreground hover:border-violet-500/50 transition"
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-muted-foreground text-sm hover:text-foreground hover:border-blue-500/50 transition"
                   >
                     <FaGithub size={14} /> GitHub
                   </a>

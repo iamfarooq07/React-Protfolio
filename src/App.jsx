@@ -7,6 +7,7 @@ import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Features from "./components/Features";
+import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -23,7 +24,7 @@ function App() {
     <>
       {/* Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-violet-500 via-pink-500 to-red-500 z-[100] origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-emerald-500 z-[100] origin-left"
         style={{ scaleX: scrollYProgress }}
       />
 
@@ -40,7 +41,7 @@ function App() {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-              className="w-14 h-14 rounded-full border-4 border-violet-500 border-t-transparent"
+              className="w-14 h-14 rounded-full border-4 border-blue-500 border-t-transparent"
             />
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -71,6 +72,7 @@ function App() {
               <section id="skills"><Skills /></section>
               <section id="projects"><Projects /></section>
               <section id="features"><Features /></section>
+              <section id="certifications"><Certifications /></section>
               <section id="contact"><Contact /></section>
             </main>
             <Footer />

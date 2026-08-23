@@ -252,7 +252,7 @@ export function IconCloud({
             ctx.drawImage(iconCanvasesRef.current[index], -20, -20, 40, 40)
           }
         } else {
-          // Show numbered circles if no icons/images are provided
+          // Show numbeemerald circles if no icons/images are provided
           ctx.beginPath()
           ctx.arc(0, 0, 20, 0, Math.PI * 2)
           ctx.fillStyle = "#4444ff"

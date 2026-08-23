@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-border">
           {/* Brand */}
           <div>
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
               FarooqDev
             </h2>
             <p className="mt-3 text-muted-foreground text-sm leading-relaxed max-w-xs">
@@ -65,7 +65,7 @@ const Footer = () => {
                   <a
                     href={link.href}
                     onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
-                    className="text-muted-foreground hover:text-violet-400 transition-colors text-sm"
+                    className="text-muted-foreground hover:text-blue-400 transition-colors text-sm"
                   >
                     {link.label}
                   </a>
@@ -93,7 +93,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="pt-6 text-center text-sm text-muted-foreground flex items-center justify-center gap-1">
           © {new Date().getFullYear()} Muhammad Farooq — Built with
-          <FaHeart className="text-pink-500 mx-1" size={12} />
+          <FaHeart className="text-cyan-500 mx-1" size={12} />
           using React & Tailwind CSS
         </div>
       </div>

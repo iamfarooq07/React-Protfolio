@@ -64,12 +64,12 @@ const categories = [
     skills: [
       { name: "Node.js", Icon: FaNodeJs, color: "text-green-500" },
       { name: "Express.js", Icon: SiExpress, color: "text-gray-400" },
-      { name: "NestJS", Icon: SiNestjs, color: "text-red-500" },
+      { name: "NestJS", Icon: SiNestjs, color: "text-emerald-500" },
       { name: "MongoDB", Icon: SiMongodb, color: "text-green-400" },
       { name: "PostgreSQL", Icon: SiPostgresql, color: "text-blue-500" },
       { name: "Prisma", Icon: SiPrisma, color: "text-cyan-300" },
       { name: "REST API", Icon: SiPostman, color: "text-orange-400" },
-      { name: "JWT", Icon: SiJsonwebtokens, color: "text-pink-500" },
+      { name: "JWT", Icon: SiJsonwebtokens, color: "text-cyan-500" },
     ],
   },
   {
@@ -77,7 +77,7 @@ const categories = [
     gradient: "from-blue-500 to-cyan-500",
     skills: [
       { name: "VS Code", Icon: VscVscode, color: "text-blue-400" },
-      { name: "Vite", Icon: SiVite, color: "text-violet-400" },
+      { name: "Vite", Icon: SiVite, color: "text-blue-400" },
       {
         name: "GitHub Copilot",
         Icon: SiGithubcopilot,
@@ -92,12 +92,12 @@ const categories = [
   },
   {
     title: "Backend & DevOps",
-    gradient: "from-violet-500 to-pink-500",
+    gradient: "from-blue-500 to-cyan-500",
     skills: [
       { name: "Git", Icon: FaGitAlt, color: "text-orange-500" },
       { name: "GitHub", Icon: FaGithub, color: "text-foreground" },
       { name: "Docker", Icon: SiDocker, color: "text-blue-500" },
-      { name: "Redis", Icon: SiRedis, color: "text-red-500" },
+      { name: "Redis", Icon: SiRedis, color: "text-emerald-500" },
       { name: "Cloudinary", Icon: SiCloudinary, color: "text-blue-400" },
       { name: "Netlify", Icon: SiNetlify, color: "text-teal-400" },
       { name: "Vercel", Icon: SiVercel, color: "text-black dark:text-white" },
@@ -117,9 +117,9 @@ const categories = [
       { name: "Magic UI", Icon: SiShadcnui, color: "text-purple-400" },
       { name: "Material UI", Icon: SiMui, color: "text-blue-500" },
       { name: "Ant Design", Icon: SiAntdesign, color: "text-blue-400" },
-      { name: "Framer Motion", Icon: SiFramer, color: "text-pink-500" },
+      { name: "Framer Motion", Icon: SiFramer, color: "text-cyan-500" },
       { name: "GSAP", Icon: SiGreensock, color: "text-green-500" },
-      { name: "Figma", Icon: SiFigma, color: "text-pink-500" },
+      { name: "Figma", Icon: SiFigma, color: "text-cyan-500" },
     ],
   },
 ];
@@ -138,7 +138,7 @@ const Skills = () => {
   return (
     <section className="relative py-28 bg-background px-6 overflow-hidden">
       <div className="absolute w-80 h-80 bg-cyan-500/10 blur-3xl rounded-full top-10 left-10 pointer-events-none" />
-      <div className="absolute w-80 h-80 bg-violet-500/10 blur-3xl rounded-full bottom-10 right-10 pointer-events-none" />
+      <div className="absolute w-80 h-80 bg-blue-500/10 blur-3xl rounded-full bottom-10 right-10 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Heading */}
@@ -149,12 +149,12 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-violet-400 uppercase tracking-widest">
+          <span className="text-sm font-semibold text-blue-400 uppercase tracking-widest">
             What I Know
           </span>
           <h2 className="mt-2 text-4xl md:text-5xl font-bold text-foreground">
             Tech{" "}
-            <span className="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
               Stack
             </span>
           </h2>
@@ -168,7 +168,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5 }}
-              className="bg-card border border-border rounded-2xl p-6 hover:border-violet-500/40 transition-all duration-300"
+              className="bg-card border border-border rounded-2xl p-6 hover:border-blue-500/40 transition-all duration-300"
             >
               <div
                 className={`inline-block text-sm font-bold px-3 py-1 rounded-full bg-gradient-to-r ${cat.gradient} text-white mb-6`}

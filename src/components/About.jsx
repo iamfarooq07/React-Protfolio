@@ -21,8 +21,8 @@ const item = {
 const About = () => {
   return (
     <section className="relative py-28 bg-background px-6 overflow-hidden">
-      <div className="absolute w-80 h-80 bg-violet-500/15 blur-3xl rounded-full top-10 right-10 pointer-events-none" />
-      <div className="absolute w-80 h-80 bg-pink-500/15 blur-3xl rounded-full bottom-10 left-10 pointer-events-none" />
+      <div className="absolute w-80 h-80 bg-blue-500/15 blur-3xl rounded-full top-10 right-10 pointer-events-none" />
+      <div className="absolute w-80 h-80 bg-cyan-500/15 blur-3xl rounded-full bottom-10 left-10 pointer-events-none" />
 
       <motion.div
         variants={container}
@@ -33,9 +33,9 @@ const About = () => {
       >
         {/* Heading */}
         <motion.div variants={item} className="text-center mb-16">
-          <span className="text-sm font-semibold text-violet-400 uppercase tracking-widest">Who I Am</span>
+          <span className="text-sm font-semibold text-blue-500 uppercase tracking-widest">Who I Am</span>
           <h2 className="mt-2 text-4xl md:text-5xl font-bold text-foreground">
-            About <span className="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">Me</span>
+            About <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">Me</span>
           </h2>
         </motion.div>
 
@@ -62,7 +62,7 @@ const About = () => {
               {["React", "Node.js", "MongoDB", "Express", "Tailwind CSS", "JavaScript"].map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 rounded-full text-sm border border-violet-500/30 bg-violet-500/10 text-violet-400"
+                  className="px-3 py-1 rounded-full text-sm border border-blue-500/30 bg-blue-500/10 text-blue-500"
                 >
                   {tech}
                 </span>
@@ -76,14 +76,14 @@ const About = () => {
               <motion.div
                 key={label}
                 whileHover={{ scale: 1.05, y: -4 }}
-                className="bg-card border border-border rounded-2xl p-6 text-center hover:border-violet-500/50 transition-all duration-300 group"
+                className="bg-card border border-border rounded-2xl p-6 text-center hover:border-blue-500/50 transition-all duration-300 group"
               >
                 <div className="flex justify-center mb-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500/20 to-pink-500/20 flex items-center justify-center group-hover:from-violet-500/30 group-hover:to-pink-500/30 transition">
-                    <Icon className="text-violet-400" size={22} />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center group-hover:from-blue-500/30 group-hover:to-cyan-500/30 transition">
+                    <Icon className="text-blue-500" size={22} />
                   </div>
                 </div>
-                <h3 className="text-3xl font-bold bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
+                <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
                   {value}
                 </h3>
                 <p className="text-muted-foreground text-sm mt-1">{label}</p>

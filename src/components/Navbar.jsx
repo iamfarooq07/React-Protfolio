@@ -10,6 +10,7 @@ const links = [
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Features", href: "#features" },
+  { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -46,7 +47,7 @@ const Navbar = () => {
           href="#home"
           onClick={(e) => { e.preventDefault(); handleNav("#home"); }}
           whileHover={{ scale: 1.05 }}
-          className="text-2xl font-bold bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent"
+          className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent"
         >
           Farooq<span className="text-foreground">Dev</span>
         </motion.a>

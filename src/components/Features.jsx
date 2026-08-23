@@ -9,7 +9,7 @@ const features = [
     title: "Authentication",
     description:
       "Secure user authentication using JWT tokens, bcrypt password hashing, and protected routes on both frontend and backend.",
-    gradient: "from-violet-500 to-purple-600",
+    gradient: "from-blue-500 to-purple-600",
     tags: ["JWT", "bcrypt", "Sessions"],
   },
   {
@@ -33,7 +33,7 @@ const features = [
     title: "CRUD Operations",
     description:
       "Full Create, Read, Update, Delete functionality with proper validation, error handling, and real-time UI updates.",
-    gradient: "from-pink-500 to-rose-600",
+    gradient: "from-cyan-500 to-rose-600",
     tags: ["Create", "Read", "Update", "Delete"],
   },
   {
@@ -79,9 +79,9 @@ const Features = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-violet-400 uppercase tracking-widest">Backend Capabilities</span>
+          <span className="text-sm font-semibold text-blue-400 uppercase tracking-widest">Backend Capabilities</span>
           <h2 className="mt-2 text-4xl md:text-5xl font-bold text-foreground">
-            Core <span className="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">Features</span>
+            Core <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">Features</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
             The backend skills and patterns I apply to build secure, scalable, and production-ready applications.
@@ -100,7 +100,7 @@ const Features = () => {
               key={title}
               variants={item}
               whileHover={{ y: -5 }}
-              className="group bg-card border border-border rounded-2xl p-6 hover:border-violet-500/40 transition-all duration-300"
+              className="group bg-card border border-border rounded-2xl p-6 hover:border-blue-500/40 transition-all duration-300"
             >
               <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                 <Icon className="text-white" size={22} />
