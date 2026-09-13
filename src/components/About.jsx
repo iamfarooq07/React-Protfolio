@@ -33,9 +33,14 @@ const About = () => {
       >
         {/* Heading */}
         <motion.div variants={item} className="text-center mb-16">
-          <span className="text-sm font-semibold text-blue-500 uppercase tracking-widest">Who I Am</span>
+          <span className="text-sm font-semibold text-blue-500 uppercase tracking-widest">
+            Who I Am
+          </span>
           <h2 className="mt-2 text-4xl md:text-5xl font-bold text-foreground">
-            About <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">Me</span>
+            About{" "}
+            <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+              Me
+            </span>
           </h2>
         </motion.div>
 
@@ -43,23 +48,37 @@ const About = () => {
           {/* Text */}
           <motion.div variants={item} className="space-y-5">
             <p className="text-muted-foreground leading-relaxed text-lg">
-              I'm a <span className="text-foreground font-semibold">Full-Stack MERN Developer</span> based
-              in Karachi, Pakistan, with 6 years of diverse professional experience that shaped a strong
-              work ethic and a pragmatic approach to software engineering.
+              I'm a{" "}
+              <span className="text-foreground font-semibold">
+                Full-Stack MERN Developer
+              </span>{" "}
+              based in Karachi, Pakistan, with hands-on experience in modern web
+              development and a strong work ethic focused on building practical,
+              scalable software solutions.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I specialize in the full MERN stack — building everything from secure REST APIs and
-              authentication systems to performant, pixel-perfect React frontends. My background spans
-              multiple industries, giving me an edge in understanding real-world product requirements.
+              I specialize in the full MERN stack — building everything from
+              secure REST APIs and authentication systems to performant,
+              pixel-perfect React frontends. My background spans multiple
+              industries, giving me an edge in understanding real-world product
+              requirements.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I care deeply about clean code, scalable architecture, and delivering experiences that
-              actually work. Whether it's a polished UI or a robust backend, I bring the same level
-              of care to every layer of the stack.
+              I care deeply about clean code, scalable architecture, and
+              delivering experiences that actually work. Whether it's a polished
+              UI or a robust backend, I bring the same level of care to every
+              layer of the stack.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              {["React", "Node.js", "MongoDB", "Express", "Tailwind CSS", "JavaScript"].map((tech) => (
+              {[
+                "React",
+                "Node.js",
+                "MongoDB",
+                "Express",
+                "Tailwind CSS",
+                "JavaScript",
+              ].map((tech) => (
                 <span
                   key={tech}
                   className="px-3 py-1 rounded-full text-sm border border-blue-500/30 bg-blue-500/10 text-blue-500"

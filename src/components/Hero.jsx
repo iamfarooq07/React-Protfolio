@@ -99,118 +99,104 @@ const Hero = () => {
           <Icon size={36} />
         </motion.div>
       ))}
-
-      {/* Content */}
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className="text-center max-w-3xl z-10 "
-      >
+      <div className="w-full pl-16 min-h-[80vh] flex flex-col lg:flex-row justify-between items-center gap-12">
+        {/* LEFT SIDE - Hero Content */}
         <motion.div
-          variants={item}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium mb-6"
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          className="text-center lg:text-left max-w-3xl flex-1 z-10"
         >
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          Available for work
+          <motion.div
+            variants={item}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium mb-6"
+          >
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            Available for work
+          </motion.div>
+
+          <motion.h1
+            variants={item}
+            className="text-5xl md:text-7xl font-bold text-foreground leading-tight"
+          >
+            Hi, I'm{" "}
+            <span className="bg-gradient-to-r from-blue-500 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">
+              Muhammad Farooq
+            </span>
+          </motion.h1>
+
+          <motion.div
+            variants={item}
+            className="mt-4 text-xl md:text-2xl font-semibold text-muted-foreground h-8"
+          >
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              {displayed}
+            </span>
+
+            <span className="animate-pulse text-blue-400">|</span>
+          </motion.div>
+
+          <motion.p
+            variants={item}
+            className="mt-6 text-muted-foreground text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed"
+          >
+            I build modern, responsive web applications using JavaScript, React,
+            and the MERN stack. Passionate about clean code, performance, and
+            creating user-friendly experiences.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            variants={item}
+            className="mt-10 flex gap-4 justify-center lg:justify-start flex-wrap"
+          >
+            <motion.a
+              href="/M-Farooq.pdf"
+              download
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-7 py-3 rounded-xl border border-emerald-500/50 text-foreground font-semibold hover:bg-emerald-500/10 transition"
+            >
+              Download Resume
+            </motion.a>
+          </motion.div>
+
+          {/* Social Icons */}
+          <motion.div
+            variants={item}
+            className="mt-10 flex justify-center lg:justify-start gap-5"
+          >
+            <motion.a
+              href="https://github.com/iamfarooq07"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, y: -3 }}
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <FaGithub size={28} />
+            </motion.a>
+
+            <motion.a
+              href="https://www.linkedin.com/in/muhammad-farooq-123f/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, y: -3 }}
+              className="text-muted-foreground hover:text-blue-400 transition-colors"
+            >
+              <FaLinkedin size={28} />
+            </motion.a>
+          </motion.div>
         </motion.div>
 
-        <motion.h1
-          variants={item}
-          className="text-5xl md:text-7xl font-bold text-foreground leading-tight"
-        >
-          Hi, I'm{" "}
-          <span className="bg-gradient-to-r from-blue-500 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">
-            Muhammad Farooq
-          </span>
-        </motion.h1>
-
-        <motion.div
-          variants={item}
-          className="mt-4 text-xl md:text-2xl font-semibold text-muted-foreground h-8"
-        >
-          <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-            {displayed}
-          </span>
-          <span className="animate-pulse text-blue-400">|</span>
-        </motion.div>
-
-        <motion.p
-          variants={item}
-          className="mt-6 text-muted-foreground text-lg max-w-xl mx-auto leading-relaxed"
-        >
-          I build modern, responsive web applications using JavaScript, React,
-          and the MERN stack. Passionate about clean code, performance, and
-          creating user-friendly experiences.
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          variants={item}
-          className="mt-10 flex gap-4 justify-center flex-wrap"
-        >
-          <motion.a
-            href="#projects"
-            onClick={(e) => {
-              e.preventDefault();
-              document
-                .querySelector("#projects")
-                ?.scrollIntoView({ behavior: "smooth" });
-            }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-7 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-shadow"
-          >
-            View Projects
-          </motion.a>
-          <motion.a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              document
-                .querySelector("#contact")
-                ?.scrollIntoView({ behavior: "smooth" });
-            }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-7 py-3 rounded-xl border border-blue-500/50 text-foreground font-semibold hover:bg-blue-500/10 transition"
-          >
-            Contact Me
-          </motion.a>
-          <motion.a
-            href="/M-Farooq.pdf"
-            download
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-7 py-3 rounded-xl border border-emerald-500/50 text-foreground font-semibold hover:bg-emerald-500/10 transition"
-          >
-            Download Resume
-          </motion.a>
-        </motion.div>
-
-        {/* Social Icons */}
-        <motion.div variants={item} className="mt-10 flex justify-center gap-5">
-          <motion.a
-            href="https://github.com/iamfarooq07"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.2, y: -3 }}
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <FaGithub size={28} />
-          </motion.a>
-          <motion.a
-            href="https://www.linkedin.com/in/muhammad-farooq-123f/"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.2, y: -3 }}
-            className="text-muted-foreground hover:text-blue-400 transition-colors"
-          >
-            <FaLinkedin size={28} />
-          </motion.a>
-        </motion.div>
-      </motion.div>
-
+        {/* RIGHT SIDE */}
+        <div className="flex-1 flex justify-center items-center">
+          <img
+            src="/profile.jpeg"
+            alt="Muhammad Farooq"
+            className="w-72 h-72 md:w-96 md:h-96 rounded-full object-cover border-4 border-blue-500/30 shadow-2xl"
+          />
+        </div>
+      </div>
       {/* Scroll Down Indicator */}
       <motion.a
         href="#about"

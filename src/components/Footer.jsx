@@ -1,20 +1,19 @@
 import { motion } from "motion/react";
 import { FaGithub, FaLinkedin, FaHeart } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Features", href: "#features" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Experience", href: "/experience" },
+  { label: "Skills", href: "/skills" },
+  { label: "Projects", href: "/projects" },
+  { label: "Features", href: "/features" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Footer = () => {
-  const scrollTo = (href) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-  };
+  const navigate = useNavigate();
 
   return (
     <motion.footer
@@ -62,13 +61,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {links.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
+                  <button
+                    onClick={() => navigate(link.href)}
                     className="text-muted-foreground hover:text-blue-400 transition-colors text-sm"
                   >
                     {link.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>

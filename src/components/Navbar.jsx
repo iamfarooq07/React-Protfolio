@@ -1,34 +1,61 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { HiMenuAlt3, HiX, HiChevronDown } from "react-icons/hi";
+import { useNavigate, useLocation } from "react-router-dom";
 import ThemeSwitcherSimple from "./ThemeSwitcherSimple";
 
-const links = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Features", href: "#features" },
-  { label: "Certifications", href: "#certifications" },
-  { label: "Contact", href: "#contact" },
+const moreLinks = [
+  { label: "About", href: "/about" },
+  { label: "Experience", href: "/experience" },
+  { label: "Skills", href: "/skills" },
+  { label: "Projects", href: "/projects" },
+  { label: "Features", href: "/features" },
+  { label: "Certifications", href: "/certifications" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  const moreRef = useRef(null);
+
+  // Navbar scroll effect
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close More dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (moreRef.current && !moreRef.current.contains(event.target)) {
+        setMoreOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setOpen(false);
+    setMoreOpen(false);
+  }, [location.pathname]);
+
+  // Navigation handler
   const handleNav = (href) => {
     setOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    setMoreOpen(false);
+    navigate(href);
   };
+
+  // Check if a link is active
+  const isActive = (href) => location.pathname === href;
 
   return (
     <motion.nav
@@ -41,38 +68,93 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
+      {/* Navbar Container */}
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <motion.a
-          href="#home"
-          onClick={(e) => { e.preventDefault(); handleNav("#home"); }}
+
+        {/* LOGO */}
+        <motion.button
+          onClick={() => handleNav("/")}
           whileHover={{ scale: 1.05 }}
-          className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent"
+          className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent cursor-pointer"
         >
-          Farooq<span className="text-foreground">Dev</span>
-        </motion.a>
+          Muhammad
+          <span className="text-foreground"> Farooq</span>
+        </motion.button>
 
-        {/* Desktop Links */}
-        <ul className="hidden md:flex gap-8 items-center">
-          {links.map((link) => (
-            <motion.li key={link.href} whileHover={{ y: -2 }}>
-              <a
-                href={link.href}
-                onClick={(e) => { e.preventDefault(); handleNav(link.href); }}
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
-              >
-                {link.label}
-              </a>
-            </motion.li>
-          ))}
+        {/* DESKTOP NAVBAR */}
+        <div className="hidden md:flex items-center gap-8">
+
+          {/* Home */}
+          <motion.button
+            onClick={() => handleNav("/")}
+            whileHover={{ y: -2 }}
+            className={`transition-colors text-sm font-medium ${
+              isActive("/")
+                ? "text-blue-500"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Home
+          </motion.button>
+
+          {/* MORE DROPDOWN */}
+          <div ref={moreRef} className="relative">
+            <button
+              type="button"
+              onClick={() => setMoreOpen((prev) => !prev)}
+              className={`flex items-center gap-1 transition-colors text-sm font-medium ${
+                moreLinks.some((l) => isActive(l.href))
+                  ? "text-blue-500"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              More
+              <HiChevronDown
+                className={`text-lg transition-transform duration-200 ${
+                  moreOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {/* More Dropdown */}
+            <AnimatePresence>
+              {moreOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute right-0 mt-4 w-52 bg-card/95 backdrop-blur-md border border-border rounded-xl shadow-xl p-2"
+                >
+                  {moreLinks.map((link) => (
+                    <motion.button
+                      key={link.href}
+                      onClick={() => handleNav(link.href)}
+                      whileHover={{ x: 4 }}
+                      className={`w-full text-left block px-4 py-2.5 rounded-lg transition-colors text-sm ${
+                        isActive(link.href)
+                          ? "text-blue-500 bg-blue-500/10"
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      }`}
+                    >
+                      {link.label}
+                    </motion.button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Theme Switcher */}
           <ThemeSwitcherSimple />
-        </ul>
+        </div>
 
-        {/* Mobile */}
+        {/* MOBILE NAVBAR */}
         <div className="md:hidden flex items-center gap-3">
           <ThemeSwitcherSimple />
           <button
-            onClick={() => setOpen(!open)}
+            type="button"
+            onClick={() => setOpen((prev) => !prev)}
             className="text-foreground text-2xl"
             aria-label="Toggle menu"
           >
@@ -81,28 +163,48 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {open && (
-          <motion.ul
+          <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-card/95 backdrop-blur-md border-t border-border px-6 py-4 space-y-4 overflow-hidden"
+            className="md:hidden bg-card/95 backdrop-blur-md border-t border-border overflow-hidden"
           >
-            {links.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={(e) => { e.preventDefault(); handleNav(link.href); }}
-                  className="block text-muted-foreground hover:text-foreground transition-colors font-medium"
+            <ul className="px-6 py-4 space-y-2">
+              {/* Home */}
+              <li>
+                <button
+                  onClick={() => handleNav("/")}
+                  className={`w-full text-left block px-3 py-2 rounded-lg transition-colors font-medium ${
+                    isActive("/")
+                      ? "text-blue-500 bg-blue-500/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  }`}
                 >
-                  {link.label}
-                </a>
+                  Home
+                </button>
               </li>
-            ))}
-          </motion.ul>
+
+              {/* More Links */}
+              {moreLinks.map((link) => (
+                <li key={link.href}>
+                  <button
+                    onClick={() => handleNav(link.href)}
+                    className={`w-full text-left block px-3 py-2 rounded-lg transition-colors font-medium ${
+                      isActive(link.href)
+                        ? "text-blue-500 bg-blue-500/10"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         )}
       </AnimatePresence>
     </motion.nav>
