@@ -1,5 +1,5 @@
 import { motion, useScroll } from "motion/react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -15,6 +15,7 @@ import Contact from "./components/Contact";
 // Layout: Navbar + page content + Footer
 const Layout = ({ children }) => {
   const { scrollYProgress } = useScroll();
+  const { pathname } = useLocation();
 
   return (
     <>
@@ -25,7 +26,7 @@ const Layout = ({ children }) => {
       />
       <Navbar />
       <main>{children}</main>
-      <Footer />
+      {pathname !== "/" && <Footer />}
     </>
   );
 };

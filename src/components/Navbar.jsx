@@ -69,13 +69,12 @@ const Navbar = () => {
       }`}
     >
       {/* Navbar Container */}
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
         {/* LOGO */}
         <motion.button
           onClick={() => handleNav("/")}
           whileHover={{ scale: 1.05 }}
-          className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent cursor-pointer"
+          className="text-lg font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent cursor-pointer sm:text-2xl"
         >
           Muhammad
           <span className="text-foreground"> Farooq</span>
@@ -83,7 +82,6 @@ const Navbar = () => {
 
         {/* DESKTOP NAVBAR */}
         <div className="hidden md:flex items-center gap-8">
-
           {/* Home */}
           <motion.button
             onClick={() => handleNav("/")}
@@ -155,8 +153,9 @@ const Navbar = () => {
           <button
             type="button"
             onClick={() => setOpen((prev) => !prev)}
-            className="text-foreground text-2xl"
+            className="rounded-md p-2 text-foreground text-2xl"
             aria-label="Toggle menu"
+            aria-expanded={open}
           >
             {open ? <HiX /> : <HiMenuAlt3 />}
           </button>
@@ -171,7 +170,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-card/95 backdrop-blur-md border-t border-border overflow-hidden"
+            className="md:hidden max-h-[calc(100svh-4rem)] overflow-y-auto border-t border-border bg-card/95 backdrop-blur-md"
           >
             <ul className="px-6 py-4 space-y-2">
               {/* Home */}

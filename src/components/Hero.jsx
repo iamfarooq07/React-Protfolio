@@ -76,11 +76,8 @@ const Hero = () => {
   }, [displayed, typing, roleIndex]);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background px-6 pt-20">
-      {/* Gradient Orbs */}
-      <div className="absolute w-96 h-96 bg-blue-500/20 blur-3xl rounded-full -top-20 -left-20 pointer-events-none" />
-      <div className="absolute w-96 h-96 bg-cyan-500/20 blur-3xl rounded-full -bottom-20 -right-20 pointer-events-none" />
-      <div className="absolute w-64 h-64 bg-emerald-500/10 blur-3xl rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+    <section className="relative min-h-[100svh] flex flex-col items-center justify-center overflow-hidden bg-background px-4 pt-24 pb-16 sm:px-6">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.035] [background-image:linear-gradient(to_right,currentColor_1px,transparent_1px),linear-gradient(to_bottom,currentColor_1px,transparent_1px)] [background-size:48px_48px]" />
 
       {/* Floating Tech Icons */}
       {floatingIcons.map(({ Icon, color, x, y, delay }, i) => (
@@ -99,13 +96,13 @@ const Hero = () => {
           <Icon size={36} />
         </motion.div>
       ))}
-      <div className="w-full pl-16 min-h-[80vh] flex flex-col lg:flex-row justify-between items-center gap-12">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-10rem)] w-full max-w-7xl flex-col items-center justify-center gap-10 lg:grid lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
         {/* LEFT SIDE - Hero Content */}
         <motion.div
           variants={container}
           initial="hidden"
           animate="visible"
-          className="text-center lg:text-left max-w-3xl flex-1 z-10"
+          className="z-10 w-full max-w-3xl text-center lg:text-left"
         >
           <motion.div
             variants={item}
@@ -117,7 +114,7 @@ const Hero = () => {
 
           <motion.h1
             variants={item}
-            className="text-5xl md:text-7xl font-bold text-foreground leading-tight"
+            className="text-4xl font-bold leading-[1.08] text-foreground min-[420px]:text-5xl md:text-6xl xl:text-7xl"
           >
             Hi, I'm{" "}
             <span className="bg-gradient-to-r from-blue-500 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">
@@ -127,7 +124,7 @@ const Hero = () => {
 
           <motion.div
             variants={item}
-            className="mt-4 text-xl md:text-2xl font-semibold text-muted-foreground h-8"
+            className="mt-4 min-h-8 text-lg font-semibold text-muted-foreground sm:text-xl md:text-2xl"
           >
             <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
               {displayed}
@@ -138,7 +135,7 @@ const Hero = () => {
 
           <motion.p
             variants={item}
-            className="mt-6 text-muted-foreground text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed"
+            className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg lg:mx-0"
           >
             I build modern, responsive web applications using JavaScript, React,
             and the MERN stack. Passionate about clean code, performance, and
@@ -148,14 +145,14 @@ const Hero = () => {
           {/* CTA Buttons */}
           <motion.div
             variants={item}
-            className="mt-10 flex gap-4 justify-center lg:justify-start flex-wrap"
+            className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4 lg:justify-start"
           >
             <motion.a
               href="/M-Farooq.pdf"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-7 py-3 rounded-xl border border-emerald-500/50 text-foreground font-semibold hover:bg-emerald-500/10 transition"
+              className="rounded-lg border border-emerald-500/50 px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-emerald-500/10 sm:text-base"
             >
               Download Resume
             </motion.a>
@@ -164,7 +161,7 @@ const Hero = () => {
           {/* Social Icons */}
           <motion.div
             variants={item}
-            className="mt-10 flex justify-center lg:justify-start gap-5"
+            className="mt-8 flex justify-center gap-5 lg:justify-start"
           >
             <motion.a
               href="https://github.com/iamfarooq07"
@@ -189,11 +186,11 @@ const Hero = () => {
         </motion.div>
 
         {/* RIGHT SIDE */}
-        <div className="flex-1 flex justify-center items-center">
+        <div className="flex w-full justify-center lg:justify-end">
           <img
             src="/profile.jpeg"
             alt="Muhammad Farooq"
-            className="w-72 h-72 md:w-96 md:h-96 rounded-full object-cover border-4 border-blue-500/30 shadow-2xl"
+            className="h-56 w-56 rounded-full border-4 border-cyan-500/30 object-cover shadow-[0_20px_80px_-24px_rgba(6,182,212,0.45)] sm:h-72 sm:w-72 lg:h-80 lg:w-80 xl:h-96 xl:w-96"
           />
         </div>
       </div>
@@ -208,7 +205,7 @@ const Hero = () => {
         }}
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 1.5 }}
-        className="absolute bottom-10 text-muted-foreground hover:text-foreground transition-colors"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 text-muted-foreground transition-colors hover:text-foreground sm:bottom-6"
         aria-label="Scroll down"
       >
         <HiArrowDown size={24} />
